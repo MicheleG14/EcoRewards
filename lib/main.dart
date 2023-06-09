@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'homepagescreen.dart';
-import './discountpagescreen.dart';
+import './couponpagescreen.dart';
 import './mapscreen.dart';
 import './profilepagescreen.dart';
 
 void main() {
-  //Setting SysemUIOverlay
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
       systemStatusBarContrastEnforced: true,
       systemNavigationBarColor: Colors.green,
       systemNavigationBarDividerColor: Colors.green,
       systemNavigationBarIconBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.dark)
-  );
+      statusBarIconBrightness: Brightness.dark));
 
-//Setting SystemUIMode
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: [SystemUiOverlay.top]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,
+      overlays: [SystemUiOverlay.top]);
   runApp(const MyApp());
 }
 
@@ -26,6 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -44,16 +44,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _index = 0;
 
   final _screens = [
     const HomePageScreen(),
     const MapScreen(),
-    const DiscountPageScreen(),
+    const CouponPageScreen(),
     const ProfilePageScreen()
   ];
-
 
   void _onTabTapped(int index) {
     setState(() {
@@ -66,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: _screens[_index],
       bottomNavigationBar: BottomNavigationBar(
+          enableFeedback: false,
           onTap: _onTabTapped,
           currentIndex: _index,
           showSelectedLabels: false,
@@ -76,13 +75,21 @@ class _MyHomePageState extends State<MyHomePage> {
           unselectedItemColor: Colors.white,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 40), label: 'HomePage'),
+                icon: Icon(Icons.energy_savings_leaf, size: 40),
+                label: 'HomePage',
+                backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
-                icon: Icon(Icons.map, size: 40), label: 'MapPage'),
+                icon: Icon(Icons.map, size: 40),
+                label: 'MapPage',
+                backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
-                icon: Icon(Icons.map, size: 40), label: 'MapPage'),
+                icon: Icon(Icons.discount, size: 40),
+                label: 'CouponPage',
+                backgroundColor: Colors.transparent),
             BottomNavigationBarItem(
-                icon: Icon(Icons.map, size: 40), label: 'MapPage')
+                icon: Icon(Icons.person, size: 40),
+                label: 'ProfilePage',
+                backgroundColor: Colors.transparent)
           ]),
     );
   }
