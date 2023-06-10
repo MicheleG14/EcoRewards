@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'homepagescreen.dart';
-import './couponpagescreen.dart';
-import './mapscreen.dart';
-import './profilepagescreen.dart';
+import 'screens/homepagescreen.dart';
+import 'screens/couponpagescreen.dart';
+import 'screens/mapscreen.dart';
+import 'screens/profilepagescreen.dart';
+import './widgets/bottomnavbar.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       systemStatusBarContrastEnforced: true,
@@ -62,35 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_index],
-      bottomNavigationBar: BottomNavigationBar(
-          enableFeedback: false,
-          onTap: _onTabTapped,
-          currentIndex: _index,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.green,
-          selectedItemColor: Colors.yellow,
-          unselectedItemColor: Colors.white,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.energy_savings_leaf, size: 40),
-                label: 'HomePage',
-                backgroundColor: Colors.transparent),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.map, size: 40),
-                label: 'MapPage',
-                backgroundColor: Colors.transparent),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.discount, size: 40),
-                label: 'CouponPage',
-                backgroundColor: Colors.transparent),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person, size: 40),
-                label: 'ProfilePage',
-                backgroundColor: Colors.transparent)
-          ]),
-    );
+        body: _screens[_index],
+        bottomNavigationBar:
+            BottomNavBar(index: _index, onTabTapped: _onTabTapped));
   }
 }
