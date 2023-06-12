@@ -63,6 +63,10 @@ flutter:
   assets:
     - assets/images/Coin.png
     - assets/images/EcoRewardsText.png
+    - assets/images/amazon-logo.png
+    - assets/images/GameStop-logo.png
+    - assets/images/paypal-logo.png
+    - assets/images/sephora-logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

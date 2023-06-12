@@ -10,7 +10,8 @@ class QRButton extends StatelessWidget {
       height: 80,
       width: 350,
       child: ElevatedButton.icon(
-        onPressed: () {},
+        onPressed: () {
+        },
         icon: const Icon(Icons.qr_code_2, size: 50),
         label:
             const Text('Tocca qui per inquadrare il QR code', softWrap: true),
