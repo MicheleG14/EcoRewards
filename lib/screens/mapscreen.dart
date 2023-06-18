@@ -29,7 +29,6 @@ class _MapScreenState extends State<MapScreen> {
   void initState() {
     super.initState();
 
-    // Aggiungi marker con onTap personalizzato
     markers[const MarkerId('Ecocompattatore 2352')] = Marker(
       markerId: const MarkerId('Ecocompattatore 2352'),
       position: const LatLng(40.6837313, 14.7625798),

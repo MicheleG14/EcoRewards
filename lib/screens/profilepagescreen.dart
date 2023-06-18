@@ -1,7 +1,8 @@
+import 'package:ecorewards/screens/transactionlistscreen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/ecorewardslogo.dart';
 import '../widgets/profile_button.dart';
-
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 class ProfilePageScreen extends StatefulWidget {
   const ProfilePageScreen({super.key});
 
@@ -34,8 +35,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
-                width: 30, child: Image.asset('assets/images/bottle.png')),
+            SizedBox(width: 30, child: Image.asset('assets/images/bottle.png')),
             const Column(children: [
               Text(
                 '96',
@@ -75,17 +75,20 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
         const ProfileButton(
             icon: Icons.receipt,
             title: 'Lista transazioni',
-            subtitle: 'Tocca qui per vedere le ultime transazioni effettuate.'),
+            subtitle: 'Tocca qui per vedere le ultime transazioni effettuate.',
+            route: TransactionListScreen()),
         const ProfileButton(
             icon: Icons.question_answer,
             title: 'Hai qualche domanda?',
             subtitle:
-                'Tocca qui per scoprire informazioni relative al processo di riciclo della plastica.'),
+                'Tocca qui per scoprire informazioni relative al processo di riciclo della plastica.',
+            route: TransactionListScreen()),
         const ProfileButton(
             icon: Icons.receipt,
             title: 'Invita gli amici!',
             subtitle:
-                'Condividi un link di invito ai tuoi amici. Per ogni invitato riceverai 5 crediti in omaggio!'),
+                'Condividi un link di invito ai tuoi amici. Per ogni invitato riceverai 5 crediti in omaggio!',
+            route: TransactionListScreen()),
       ],
     ));
   }

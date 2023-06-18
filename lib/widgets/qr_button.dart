@@ -1,7 +1,11 @@
+import 'package:camera/camera.dart';
+import 'package:ecorewards/screens/transactionscreen.dart';
 import 'package:flutter/material.dart';
 
 class QRButton extends StatelessWidget {
-  const QRButton({super.key});
+  const QRButton({super.key, required this.cameras});
+
+  final List<CameraDescription> cameras;
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +15,12 @@ class QRButton extends StatelessWidget {
       width: 350,
       child: ElevatedButton.icon(
         onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CameraScreen(cameras: cameras)));
         },
         icon: const Icon(Icons.qr_code_2, size: 50),
-        label:
-            const Text('Tocca qui per inquadrare il QR code', softWrap: true),
+        label: const Text('Tocca qui per inquadrare il QR code',
+            softWrap: true, style: TextStyle(fontFamily: 'MadeTommy')),
         style: ButtonStyle(
             side: MaterialStateProperty.all<BorderSide>(
                 const BorderSide(color: Colors.grey, width: 0.7)),

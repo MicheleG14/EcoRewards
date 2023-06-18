@@ -16,7 +16,7 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 15,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(15),
       child: Container(
         alignment: Alignment.center,
         width: 320,

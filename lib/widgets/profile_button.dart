@@ -5,10 +5,12 @@ class ProfileButton extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.title,
-      required this.subtitle});
+      required this.subtitle,
+      required this.route});
 
   final IconData icon;
   final String title, subtitle;
+  final Widget route;
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +19,25 @@ class ProfileButton extends StatelessWidget {
       height: 90,
       width: 370,
       child: ElevatedButton.icon(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => route));
+        },
         icon: Icon(icon, size: 50),
         label: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title),
+            Text(
+              title,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontFamily: 'MadeTommy'),
+            ),
             Text(
               subtitle,
               style: const TextStyle(
                   fontWeight: FontWeight.normal,
+                  fontFamily: 'MadeTommy',
                   fontSize: 15,
                   color: Color(0xff979797)),
             )
