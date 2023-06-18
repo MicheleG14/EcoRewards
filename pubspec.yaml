@@ -67,8 +67,16 @@ flutter:
     - assets/images/GameStop-logo.png
     - assets/images/paypal-logo.png
     - assets/images/sephora-logo.png
+    - assets/images/bottle.png
+    - assets/images/mario-rossi.png
   #   - images/a_dot_ham.jpeg
 
+  fonts:
+    - family: MadeTommy
+      fonts:
+        - asset: assets/fonts/MadeTommyRegular.otf
+        - asset: assets/fonts/MadeTommyBold.otf
+          weight: 700
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/ecorewardslogo.dart';
+import '../widgets/profile_button.dart';
 
 class ProfilePageScreen extends StatefulWidget {
   const ProfilePageScreen({super.key});
@@ -12,96 +13,80 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
+        body: Column(
+      children: [
         const EcoRewardsLogo(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black)),
-              height: 140,
-              width: 140,
-              child: const Text('Immagine profilo'),
-            ),
+            SizedBox(
+                height: 125,
+                width: 125,
+                child: Image.asset('assets/images/mario-rossi.png')),
             const SizedBox(width: 20),
-            const Text('Mario Rossi', style: TextStyle(fontSize: 22))
+            const Text(
+              'Mario Rossi',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            )
           ],
         ),
-        const SizedBox(
-          height: 40,
-        ),
+        const SizedBox(height: 20),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black)),
-              height: 120,
-              width: 120,
-              child: const Text('Bottiglia'),
-            ),
-            const SizedBox(width: 40, height: 40),
-            Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black)),
-              height: 120,
-              width: 120,
-              child: const Text('Moneta'),
-            )
-          ],
-        ),
-        const Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
+            SizedBox(
+                width: 30, child: Image.asset('assets/images/bottle.png')),
+            const Column(children: [
+              Text(
+                '96',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 125,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  'oggetti in plastica riciclati',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Text('26 kg',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22))
+            ]),
+            SizedBox(
+                height: 60,
+                width: 60,
+                child: Image.asset('assets/images/Coin.png')),
+            const Column(
               children: [
-                Text('96'),
-                SizedBox(
-                    width: 120,
-                    child: Text(
-                      'Oggetti in plastica riciclati',
-                      textAlign: TextAlign.center,
-                    )),
-                Text('28 kg')
+                Text(
+                  '275',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                Text('crediti residui', style: TextStyle(fontSize: 16))
               ],
-            ),
-            SizedBox(height: 20, width: 40),
-            Column(
-              children: [Text('275'), Text('crediti residui')],
             )
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 25),
         Container(
-          width: 100,
-          decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.grey))),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Container(
-          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-          height: 80,
-          width: 300,
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Container(
-          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-          height: 80,
-          width: 300,
-        ),
-        const SizedBox(height: 20),
-        Container(
-          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-          height: 80,
-          width: 300,
-        )
-      ]),
-    );
+            width: 250,
+            decoration: BoxDecoration(border: Border.all(color: Colors.black))),
+        const SizedBox(height: 25),
+        const ProfileButton(
+            icon: Icons.receipt,
+            title: 'Lista transazioni',
+            subtitle: 'Tocca qui per vedere le ultime transazioni effettuate.'),
+        const ProfileButton(
+            icon: Icons.question_answer,
+            title: 'Hai qualche domanda?',
+            subtitle:
+                'Tocca qui per scoprire informazioni relative al processo di riciclo della plastica.'),
+        const ProfileButton(
+            icon: Icons.receipt,
+            title: 'Invita gli amici!',
+            subtitle:
+                'Condividi un link di invito ai tuoi amici. Per ogni invitato riceverai 5 crediti in omaggio!'),
+      ],
+    ));
   }
 }

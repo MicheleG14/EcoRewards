@@ -54,7 +54,7 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
         children: [
           const EcoRewardsLogo(),
           const SizedBox(
-            height: 60,
+            height: 30,
             width: 180,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

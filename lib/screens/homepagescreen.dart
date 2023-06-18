@@ -17,7 +17,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         children: [
           const EcoRewardsLogo(),
           const Text('Benvenuto',
-              style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold)),
+              style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold, fontFamily: 'MadeTommy')),
           const QRButton(),
           const Text('oppure',
               style: TextStyle(fontSize: 16, color: Colors.grey)),
