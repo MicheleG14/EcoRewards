@@ -1,13 +1,9 @@
-import 'package:camera/camera.dart';
-import 'package:camera_platform_interface/src/types/camera_description.dart';
 import 'package:ecorewards/widgets/qr_button.dart';
 import 'package:flutter/material.dart';
 import '../widgets/ecorewardslogo.dart';
 
 class HomePageScreen extends StatefulWidget {
-  HomePageScreen({super.key, required this.cameras});
-
-  final List<CameraDescription> cameras;
+  const HomePageScreen({super.key});
 
   @override
   State<HomePageScreen> createState() => _HomePageScreenState();
@@ -25,7 +21,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   fontSize: 44,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'MadeTommy')),
-          QRButton(cameras: widget.cameras),
+          QRButton(),
           const Text('oppure',
               style: TextStyle(fontSize: 16, color: Colors.grey)),
           Container(

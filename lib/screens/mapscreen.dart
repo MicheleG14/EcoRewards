@@ -118,30 +118,33 @@ class _MapScreenState extends State<MapScreen> {
       transitionDuration: const Duration(milliseconds: 100),
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.of(context)
-                .pop(); // Chiude il dialog quando si tocca all'esterno
-          },
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Positioned(
-                  top: 570, // Imposta la posizione verticale desiderata
-                  left: 50, // Imposta la posizione orizzontale desiderata
-                  child: AddressCard(
-                    title: markerId,
-                    address: address,
-                    city: city,
-                    position: position,
-                    icon: icon,
-                  ),
+        return StatefulBuilder(
+          builder: (BuildContext dialogContext, StateSetter setState) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(dialogContext).pop();
+              },
+              child: Scaffold(
+                backgroundColor: Colors.transparent,
+                body: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      top: 570, // Set the desired vertical position
+                      left: 50, // Set the desired horizontal position
+                      child: AddressCard(
+                        title: markerId,
+                        address: address,
+                        city: city,
+                        position: position,
+                        icon: icon,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         );
       },
     );

@@ -1,5 +1,3 @@
-import 'package:camera/camera.dart';
-import 'package:ecorewards/screens/transactionlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -9,7 +7,6 @@ import 'screens/mapscreen.dart';
 import 'screens/profilepagescreen.dart';
 import './widgets/customappbar.dart';
 
-late List<CameraDescription> _cameras;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,8 +17,6 @@ void main() async {
       systemNavigationBarDividerColor: Colors.green,
       systemNavigationBarIconBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.dark));
-
-  _cameras = await availableCameras();
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,
       overlays: [SystemUiOverlay.top]);
@@ -86,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   final _screens = [
-    HomePageScreen(cameras: _cameras),
+    const HomePageScreen(),
     const MapScreen(),
     const CouponPageScreen(),
     const ProfilePageScreen()
