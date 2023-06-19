@@ -1,6 +1,6 @@
 import 'package:ecorewards/widgets/coupon_card.dart';
 import 'package:flutter/material.dart';
-import '../widgets/ecorewardslogo.dart';
+import '../widgets/ecorewards_logo.dart';
 
 class CouponPageScreen extends StatefulWidget {
   const CouponPageScreen({super.key});
@@ -15,32 +15,32 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
   @override
   void initState() {
     list.add(const CouponCard(
-        imagePath: 'assets/images/amazon-logo.png',
+        imagePath: 'assets/images/amazon_logo.png',
         title: 'Amazon',
         description:
             'Amazon.com, Inc. è un\'azienda di commercio elettronico statunitense, con sede a Seattle nello stato di Washington.',
         price: '50 crediti = 5€'));
 
     list.add(const CouponCard(
-        imagePath: 'assets/images/GameStop-logo.png',
+        imagePath: 'assets/images/gamestop_logo.png',
         title: 'GameStop',
         description:
             'È il più grande rivenditore di videogiochi nuovi e usati nel mondo, ma si occupa anche della vendita di accessori per videogiochi, console ed altri',
         price: '50 crediti = 5€'));
 
     list.add(const CouponCard(
-        imagePath: 'assets/images/sephora-logo.png',
+        imagePath: 'assets/images/sephora_logo.png',
         title: 'Sephora',
         description:
-            'È il più grande rivenditore di videogiochi nuovi e usati nel mondo, ma si occupa anche della vendita di accessori per videogiochi, console ed altri',
+            'Sephora è una multinazionale di profumerie fondata in Francia nel 1970 ed acquisita da LVMH nel 1997. La catena Sephora include oltre 750 punti vendita in 17 paesi del mondo.',
         price: '50 crediti = 5€'));
 
     list.add(
       const CouponCard(
-          imagePath: 'assets/images/paypal-logo.png',
+          imagePath: 'assets/images/paypal_logo.png',
           title: 'Paypal',
           description:
-              'È il più grande rivenditore di videogiochi nuovi e usati nel mondo, ma si occupa anche della vendita di accessori per videogiochi, console ed altri',
+              'PayPal Holdings, Inc. è una società statunitense che offre servizi di pagamento digitale e di trasferimento di denaro tramite Internet fondata nel 1999 da Confinity.',
           price: '50 crediti = 5€'),
     );
     super.initState();
@@ -62,7 +62,7 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
                 SizedBox(
                   width: 40,
                   height: 40,
-                  child: Image(image: AssetImage('assets/images/Coin.png')),
+                  child: Image(image: AssetImage('assets/images/coin.png')),
                 ),
                 Text('350',
                     style:

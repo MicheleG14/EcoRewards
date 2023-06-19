@@ -1,4 +1,4 @@
-import 'package:ecorewards/widgets/ecorewardslogo.dart';
+import 'package:ecorewards/widgets/ecorewards_logo.dart';
 import 'package:ecorewards/widgets/transaction_card.dart';
 import 'package:flutter/material.dart';
 import '../widgets/transaction_card.dart';

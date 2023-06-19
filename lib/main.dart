@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'screens/homepagescreen.dart';
-import 'screens/couponpagescreen.dart';
-import 'screens/mapscreen.dart';
-import 'screens/profilepagescreen.dart';
-import './widgets/customappbar.dart';
+import 'screens/homepage_screen.dart';
+import 'screens/couponpage_screen.dart';
+import 'screens/map_screen.dart';
+import 'screens/profilepage_screen.dart';
+import './widgets/custom_appbar.dart';
 
 
 void main() async {

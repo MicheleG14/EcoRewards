@@ -1,5 +1,5 @@
-import 'package:ecorewards/screens/profilepagescreen.dart';
-import 'package:ecorewards/widgets/ecorewardslogo.dart';
+import 'package:ecorewards/screens/profilepage_screen.dart';
+import 'package:ecorewards/widgets/ecorewards_logo.dart';
 import 'package:flutter/material.dart';
 
 class TransactionStatsScreen extends StatelessWidget {
@@ -44,7 +44,7 @@ class TransactionStatsScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(width: 50, child: Image.asset('assets/images/Coin.png')),
+            SizedBox(width: 50, child: Image.asset('assets/images/coin.png')),
             Text(
               (insertedObjects*5).toString(),
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),

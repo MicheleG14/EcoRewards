@@ -62,8 +62,9 @@ class _CouponCardState extends State<CouponCard> {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.green),
                             ),
-                            Slider(activeColor: Colors.black,
-                              label: sliderValue.toString(),
+                            Slider(
+                              activeColor: Colors.black,
+                              label: sliderValue.toInt().toString()+' crediti',
                               value: sliderValue,
                               onChanged: (newValue) {
                                 setState(() {
@@ -71,9 +72,16 @@ class _CouponCardState extends State<CouponCard> {
                                   print(sliderValue);
                                 });
                               },
-                              divisions: 5,
+                              divisions: 7,
                               min: 0,
-                              max: 100,
+                              max: 350,
+                            ),
+                            Text(
+                              (sliderValue/10).toInt().toString() + '€',
+                              style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green),
                             ),
                           ],
                         ),
@@ -83,8 +91,11 @@ class _CouponCardState extends State<CouponCard> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            label: Text('Convert'),
-                            icon: Icon(Icons.currency_exchange))
+                            label: Text('Converti'),
+                            icon: Icon(Icons.currency_exchange),
+                            style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.black))),
                       ],
                     );
                   });
@@ -111,7 +122,7 @@ class _CouponCardState extends State<CouponCard> {
                       ),
                       SizedBox(
                         height: 70,
-                        width: 180,
+                        width: 220,
                         child: Text(
                           widget.description,
                           style:

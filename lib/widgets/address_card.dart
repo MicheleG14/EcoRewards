@@ -22,6 +22,7 @@ class AddressCard extends StatelessWidget {
         width: 320,
         height: 150,
         decoration: BoxDecoration(
+            color: Color(0xfff1ebf5),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(width: 1, color: Colors.grey)),
         child: Column(
@@ -32,9 +33,11 @@ class AddressCard extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(width: 20),
                 Icon(icon, size: 50),
+                SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

@@ -1,5 +1,5 @@
 import 'package:camera/camera.dart';
-import 'package:ecorewards/screens/transactionscreen.dart';
+import 'package:ecorewards/screens/transaction_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/qrcode_overlay.dart';

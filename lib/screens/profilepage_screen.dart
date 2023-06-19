@@ -1,6 +1,6 @@
-import 'package:ecorewards/screens/transactionlistscreen.dart';
+import 'package:ecorewards/screens/transactionlist_screen.dart';
 import 'package:flutter/material.dart';
-import '../widgets/ecorewardslogo.dart';
+import '../widgets/ecorewards_logo.dart';
 import '../widgets/profile_button.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 class ProfilePageScreen extends StatefulWidget {
@@ -23,7 +23,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             SizedBox(
                 height: 125,
                 width: 125,
-                child: Image.asset('assets/images/mario-rossi.png')),
+                child: Image.asset('assets/images/mariorossi_img.png')),
             const SizedBox(width: 20),
             const Text(
               'Mario Rossi',
@@ -55,11 +55,11 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             SizedBox(
                 height: 60,
                 width: 60,
-                child: Image.asset('assets/images/Coin.png')),
+                child: Image.asset('assets/images/coin.png')),
             const Column(
               children: [
                 Text(
-                  '275',
+                  '350',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 Text('crediti residui', style: TextStyle(fontSize: 16))

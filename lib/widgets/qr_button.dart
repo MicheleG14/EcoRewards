@@ -1,4 +1,4 @@
-import 'package:ecorewards/screens/camerascreen.dart';
+import 'package:ecorewards/screens/camera_screen.dart';
 import 'package:flutter/material.dart';
 
 class QRButton extends StatelessWidget {

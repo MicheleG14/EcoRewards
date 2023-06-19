@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:ecorewards/widgets/ecorewardslogo.dart';
+import 'package:ecorewards/widgets/ecorewards_logo.dart';
 import 'package:flutter/material.dart';
 
 import 'transactionstats_screen.dart';

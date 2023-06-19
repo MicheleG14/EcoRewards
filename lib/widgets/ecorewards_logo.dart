@@ -12,7 +12,7 @@ class EcoRewardsLogo extends StatelessWidget {
           height: 100,
           width: 230,
           child: const Image(
-              image: AssetImage('assets/images/EcoRewardsText.png'))),
+              image: AssetImage('assets/images/ecorewardstext_logo.png'))),
     );
   }
 }

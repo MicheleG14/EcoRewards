@@ -1,6 +1,6 @@
 import 'package:ecorewards/widgets/qr_button.dart';
 import 'package:flutter/material.dart';
-import '../widgets/ecorewardslogo.dart';
+import '../widgets/ecorewards_logo.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});

@@ -38,10 +38,15 @@ dependencies:
   google_maps_flutter: ^2.3.0
   persistent_bottom_nav_bar: ^5.0.2
   camera: ^0.10.5+2
+  flutter_native_splash: ^2.3.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  image: assets/images/ecorewards_white.png
+  color: "2dac1c"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -63,14 +68,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/Coin.png
-    - assets/images/EcoRewardsText.png
-    - assets/images/amazon-logo.png
-    - assets/images/GameStop-logo.png
-    - assets/images/paypal-logo.png
-    - assets/images/sephora-logo.png
+    - assets/images/coin.png
+    - assets/images/ecorewardstext_logo.png
+    - assets/images/amazon_logo.png
+    - assets/images/gamestop_logo.png
+    - assets/images/paypal_logo.png
+    - assets/images/sephora_logo.png
     - assets/images/bottle.png
-    - assets/images/mario-rossi.png
+    - assets/images/mariorossi_img.png
+    - assets/images/bottle_icon.png
   #   - images/a_dot_ham.jpeg
 
   fonts:
