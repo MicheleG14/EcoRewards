@@ -1,9 +1,8 @@
-import 'package:ecorewards/screens/couponlist_screen.dart';
+import 'package:ecorewards/screens/redeemedcouponlist_screen.dart';
 import 'package:ecorewards/screens/transactionlist_screen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/ecorewards_logo.dart';
 import '../widgets/profile_button.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class ProfilePageScreen extends StatefulWidget {
   const ProfilePageScreen({super.key});
@@ -23,8 +22,8 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                height: 125,
-                width: 125,
+                height: 100,
+                width: 100,
                 child: Image.asset('assets/images/mariorossi_img.png')),
             const SizedBox(width: 20),
             const Text(
@@ -95,7 +94,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             icon: Icons.receipt,
             title: 'Lista buoni sconto',
             subtitle: 'Visualizza la lista dei buoni sconto acquistati.',
-            route: CouponListScreen()),
+            route: RedeemedCouponListScreen()),
       ],
     ));
   }

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import '../widgets/ecorewards_logo.dart';
 
-class CouponListScreen extends StatefulWidget {
-  const CouponListScreen({super.key});
+class RedeemedCouponListScreen extends StatefulWidget {
+  const RedeemedCouponListScreen({super.key});
 
   @override
-  State<CouponListScreen> createState() => _CouponListScreenState();
+  State<RedeemedCouponListScreen> createState() => _RedeemedCouponListScreenState();
 }
 
-class _CouponListScreenState extends State<CouponListScreen> {
+class _RedeemedCouponListScreenState extends State<RedeemedCouponListScreen> {
   List<CouponListCard> cards = [];
 
   @override

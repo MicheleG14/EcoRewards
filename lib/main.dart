@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'MadeTommy',
         useMaterial3: true,
+        primaryColor: Colors.green
       ),
       home: const MyHomePage(),
     );

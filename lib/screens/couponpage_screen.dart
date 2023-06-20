@@ -11,6 +11,8 @@ class CouponPageScreen extends StatefulWidget {
 
 class _CouponPageScreenState extends State<CouponPageScreen> {
   final List<CouponCard> list = [];
+  TextEditingController searchController =
+      TextEditingController(); // Aggiunto il controller per la barra di ricerca
 
   @override
   void initState() {
@@ -49,6 +51,7 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -71,18 +74,38 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
               ],
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(left: 16, right: 16),
+            child: TextField(
+              controller: searchController,
+              onChanged: (value) {
+                setState(
+                    () {}); // Aggiorna lo stato quando viene modificato il testo della barra di ricerca
+              },
+              decoration: InputDecoration(
+                  hintText: 'Cerca per nome', prefixIcon: Icon(Icons.search)),
+            ),
+          ),
           Expanded(
             child: ListView.separated(
               itemCount: list.length,
               separatorBuilder: (context, index) => const SizedBox(height: 8),
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: index == 0
-                      ? const EdgeInsets.only(bottom: 8, left: 16, right: 16)
-                      : const EdgeInsets.only(
-                          bottom: 8, top: 8, left: 16, right: 16),
-                  child: list[index],
-                );
+                // Aggiungi questa condizione per nascondere gli elementi che non corrispondono alla ricerca
+                if (list[index]
+                    .title
+                    .toLowerCase()
+                    .contains(searchController.text.toLowerCase())) {
+                  return Padding(
+                    padding: index == 0
+                        ? const EdgeInsets.only(bottom: 6, left: 12, right: 12)
+                        : const EdgeInsets.only(
+                            bottom: 6, top: 6, left: 12, right: 12),
+                    child: list[index],
+                  );
+                } else {
+                  return Container(); // Ritorna un Container vuoto per nascondere gli elementi
+                }
               },
             ),
           )

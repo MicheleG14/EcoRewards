@@ -24,6 +24,7 @@ class _MapScreenState extends State<MapScreen> {
   bool showMap = true;
   GoogleMapController? mapController;
   Map<MarkerId, Marker> markers = {};
+  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
@@ -157,6 +158,7 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           const EcoRewardsLogo(),
@@ -227,18 +229,48 @@ class _MapScreenState extends State<MapScreen> {
             visible: !showMap,
             maintainState: true,
             maintainAnimation: true,
-            child: SizedBox(
-              height: 620,
-              child: ListView.builder(
-                itemCount: cards.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: index == 0
-                        ? const EdgeInsets.only(bottom: 8, left: 8, right: 8)
-                        : const EdgeInsets.all(8),
-                    child: cards[index],
-                  );
-                },
+            child: SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: TextField(
+                        controller: searchController,
+                        onChanged: (value) {
+                          setState(
+                              () {}); // Aggiorna lo stato quando viene modificato il testo della barra di ricerca
+                        },
+                        decoration: InputDecoration(
+                            hintText: 'Cerca per indirizzo',
+                            prefixIcon: Icon(Icons.search)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 580,
+                      child: ListView.builder(
+                        itemCount: cards.length,
+                        itemBuilder: (context, index) {
+                          if (cards[index]
+                              .address
+                              .toLowerCase()
+                              .contains(searchController.text.toLowerCase())) {
+                            return Padding(
+                              padding: index == 0
+                                  ? const EdgeInsets.only(
+                                      bottom: 6, left: 12, right: 12)
+                                  : const EdgeInsets.only(
+                                      bottom: 6, top: 6, left: 12, right: 12),
+                              child: cards[index],
+                            );
+                          } else {
+                            return Container(); // Ritorna un Container vuoto per nascondere gli elementi
+                          }
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

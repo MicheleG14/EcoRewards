@@ -1,7 +1,6 @@
 import 'package:ecorewards/widgets/couponinfo_dialog.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/couponlist_screen.dart';
 
 class CouponCard extends StatefulWidget {
   const CouponCard(

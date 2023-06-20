@@ -22,7 +22,7 @@ class AddressCard extends StatelessWidget {
         width: 320,
         height: 150,
         decoration: BoxDecoration(
-            color: Color(0xfff1ebf5),
+            color: Color(0xFFf1ebf5),
             borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 1, color: Colors.grey)),
         child: Column(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import '../screens/couponlist_screen.dart';
+import '../screens/redeemedcouponlist_screen.dart';
 
 //ignore: must_be_immutable
 class CouponInfoDialog extends StatefulWidget {
@@ -112,7 +112,7 @@ class _CouponInfoDialogState extends State<CouponInfoDialog> {
                           onPressed: () {
                             PersistentNavBarNavigator.pushNewScreen(
                               context,
-                              screen: CouponListScreen(),
+                              screen: RedeemedCouponListScreen(),
                             );
                           },
                           label: Text('Lista buoni sconto'),
@@ -131,6 +131,5 @@ class _CouponInfoDialogState extends State<CouponInfoDialog> {
                 foregroundColor: MaterialStateProperty.all(Colors.black))),
       ],
     );
-    ;
   }
 }
