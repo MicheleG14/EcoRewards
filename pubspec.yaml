@@ -47,6 +47,8 @@ dev_dependencies:
 flutter_native_splash:
   image: assets/images/ecorewards_white.png
   color: "2dac1c"
+  android-12:
+    image: assets/images/ecorewards_white.png
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -72,7 +74,7 @@ flutter:
     - assets/images/ecorewardstext_logo.png
     - assets/images/amazon_logo.png
     - assets/images/gamestop_logo.png
-    - assets/images/paypal_logo.png
+    - assets/images/paypalsq_logo.png
     - assets/images/sephora_logo.png
     - assets/images/bottle.png
     - assets/images/mariorossi_img.png

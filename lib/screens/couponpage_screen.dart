@@ -37,7 +37,7 @@ class _CouponPageScreenState extends State<CouponPageScreen> {
 
     list.add(
       const CouponCard(
-          imagePath: 'assets/images/paypal_logo.png',
+          imagePath: 'assets/images/paypalsq_logo.png',
           title: 'Paypal',
           description:
               'PayPal Holdings, Inc. è una società statunitense che offre servizi di pagamento digitale e di trasferimento di denaro tramite Internet fondata nel 1999 da Confinity.',

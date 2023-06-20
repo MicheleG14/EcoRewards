@@ -16,14 +16,14 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 15,
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(10),
       child: Container(
         alignment: Alignment.center,
         width: 320,
         height: 150,
         decoration: BoxDecoration(
             color: Color(0xfff1ebf5),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 1, color: Colors.grey)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

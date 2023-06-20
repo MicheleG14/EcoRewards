@@ -1,4 +1,7 @@
+import 'package:ecorewards/widgets/couponinfo_dialog.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/couponlist_screen.dart';
 
 class CouponCard extends StatefulWidget {
   const CouponCard(
@@ -16,6 +19,7 @@ class CouponCard extends StatefulWidget {
 
 class _CouponCardState extends State<CouponCard> {
   double sliderValue = 0;
+  bool success = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,66 +42,12 @@ class _CouponCardState extends State<CouponCard> {
                 builder: (BuildContext context) {
                   return StatefulBuilder(
                       builder: (BuildContext context, StateSetter setState) {
-                    return AlertDialog(
-                      title: Text(
-                        widget.title,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      content: Container(
-                        height: 300,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                                height: 90,
-                                width: 90,
-                                child:
-                                    Image(image: AssetImage(widget.imagePath))),
-                            Text(widget.description),
-                            Text(
-                              widget.price,
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green),
-                            ),
-                            Slider(
-                              activeColor: Colors.black,
-                              label: sliderValue.toInt().toString()+' crediti',
-                              value: sliderValue,
-                              onChanged: (newValue) {
-                                setState(() {
-                                  sliderValue = newValue;
-                                  print(sliderValue);
-                                });
-                              },
-                              divisions: 7,
-                              min: 0,
-                              max: 350,
-                            ),
-                            Text(
-                              (sliderValue/10).toInt().toString() + '€',
-                              style: const TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green),
-                            ),
-                          ],
-                        ),
-                      ),
-                      actions: [
-                        ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            label: Text('Converti'),
-                            icon: Icon(Icons.currency_exchange),
-                            style: ButtonStyle(
-                                foregroundColor:
-                                    MaterialStateProperty.all(Colors.black))),
-                      ],
-                    );
+                    return CouponInfoDialog(
+                        title: widget.title,
+                        imagePath: widget.imagePath,
+                        description: widget.description,
+                        price: widget.price,
+                        sliderValue: sliderValue);
                   });
                 });
           },

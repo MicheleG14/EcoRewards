@@ -16,11 +16,12 @@ class TransactionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 10,
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(10),
       child: Container(
         height: 125,
-        decoration: BoxDecoration(color: Color(0xFFf1ebf5),
-            borderRadius: BorderRadius.circular(15),
+        decoration: BoxDecoration(
+            color: Color(0xFFf1ebf5),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 1, color: Colors.grey)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -29,14 +30,14 @@ class TransactionCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(station,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 22)),
                 Text(
                   address,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 20),
                 ),
-                Text(city, style: const TextStyle(fontSize: 18)),
-                Text(date, style: const TextStyle(fontSize: 18))
+                Text(city, style: const TextStyle(fontSize: 20)),
+                Text(date, style: const TextStyle(fontSize: 20))
               ],
             ),
             Column(

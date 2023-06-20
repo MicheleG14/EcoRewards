@@ -1,5 +1,4 @@
 package com.example.ecorewards;
-import io.flutter.plugins.flutternativesplash.FlutterNativeSplashPlugin;
 
 
 import io.flutter.embedding.android.FlutterActivity;

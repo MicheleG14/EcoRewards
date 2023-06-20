@@ -1,8 +1,10 @@
+import 'package:ecorewards/screens/couponlist_screen.dart';
 import 'package:ecorewards/screens/transactionlist_screen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/ecorewards_logo.dart';
 import '../widgets/profile_button.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
 class ProfilePageScreen extends StatefulWidget {
   const ProfilePageScreen({super.key});
 
@@ -31,7 +33,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             )
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -67,11 +69,11 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             )
           ],
         ),
-        const SizedBox(height: 25),
+        const SizedBox(height: 10),
         Container(
             width: 250,
             decoration: BoxDecoration(border: Border.all(color: Colors.black))),
-        const SizedBox(height: 25),
+        const SizedBox(height: 10),
         const ProfileButton(
             icon: Icons.receipt,
             title: 'Lista transazioni',
@@ -89,6 +91,11 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
             subtitle:
                 'Condividi un link di invito ai tuoi amici. Per ogni invitato riceverai 5 crediti in omaggio!',
             route: TransactionListScreen()),
+        const ProfileButton(
+            icon: Icons.receipt,
+            title: 'Lista buoni sconto',
+            subtitle: 'Visualizza la lista dei buoni sconto acquistati.',
+            route: CouponListScreen()),
       ],
     ));
   }

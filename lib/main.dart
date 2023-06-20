@@ -7,7 +7,6 @@ import 'screens/map_screen.dart';
 import 'screens/profilepage_screen.dart';
 import './widgets/custom_appbar.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
