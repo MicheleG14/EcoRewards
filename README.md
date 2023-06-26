@@ -25,5 +25,5 @@ EcoRewards è un'applicazione Android creata per il progetto di Interazione Uomo
 <div align="center">
   <img src="https://i.imgur.com/izG90AJ.jpg" alt="Screen1" width="250">
   <img src="https://i.imgur.com/fOAjEmi.jpg" alt="Screen2" width="250">
-  <img src="https://i.imgur.com/fOAjEmi.jpg" alt="Screen3" width="250">
+  <img src="https://i.imgur.com/eR87FLR.jpg" alt="Screen3" width="250">
 </div>
